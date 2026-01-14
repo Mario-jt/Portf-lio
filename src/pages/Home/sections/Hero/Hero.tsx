@@ -2,10 +2,10 @@ import { Grid, Container, styled, Typography, Box } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.jpeg";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
-import theme from "../../../../theme";
+
 import MyButton from "../../../../components/Styled/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
-import { Padding } from "@mui/icons-material";
+
 const StyledHero = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   height: "100vh",
@@ -49,13 +49,13 @@ const Hero = () => {
               </Typography>
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                  <MyButton>
+                  <MyButton onClick={() => console.log("download")}>
                     <DownloadIcon />
                     <Typography>Download CV</Typography>
                   </MyButton>
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                  <MyButton>
+                  <MyButton onClick={() => console.log("contact")}>
                     <EmailIcon />
                     <Typography>Contact me</Typography>
                   </MyButton>
