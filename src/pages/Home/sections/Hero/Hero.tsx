@@ -1,4 +1,4 @@
-import { Grid, Container, styled, Typography, Box } from "@mui/material";
+import { Grid, Container, styled, Typography, Box, Link } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.jpeg";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
@@ -23,6 +23,18 @@ const StyledImg = styled("img")(({ theme }) => ({
   borderRadius: "50%",
   border: `1px solid ${theme.palette.primary.contrastText}`,
 }));
+
+const handleCurriculo = () => {
+  const link = document.createElement("a");
+  link.href = "/currículo-mario-compactado.pdf";
+  link.download = "Curriculo_Mario_Junio.pdf";
+  link.click();
+};
+
+const handleContact = () => {
+  const email = "mariojt15@gmail.com";
+  window.location.href = `mailto:${email}`;
+};
 
 const Hero = () => {
   return (
@@ -49,13 +61,13 @@ const Hero = () => {
               </Typography>
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                  <MyButton onClick={() => console.log("download")}>
+                  <MyButton onClick={handleCurriculo}>
                     <DownloadIcon />
                     <Typography>Download CV</Typography>
                   </MyButton>
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                  <MyButton onClick={() => console.log("contact")}>
+                  <MyButton onClick={handleContact}>
                     <EmailIcon />
                     <Typography>Contact me</Typography>
                   </MyButton>
